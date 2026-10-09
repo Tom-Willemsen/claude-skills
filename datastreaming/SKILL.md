@@ -62,9 +62,15 @@ The types of diagnostics it exposes are:
 - Run-state readback, which can be for example SETUP (idle), RUNNING, VETOING (attempting to run but data is being vetoed), PAUSED (user paused the acquisition), WAITING (attempting to run, but data collection is suspended due to a parameter out-of-range).
   * `kafka_dae_control` publishes a *hardware* run state readback, but distinguishing between RUNNING and VETOING or WAITING requires the `pu00` headers and therefore subscribing to the `_events` stream.
 
-### `filewriter`
+### [`kafka_file_writer`](https://github.com/isisComputingGroup/kafka_file_writer)
 
-This process is not yet implemented. It will read from a number of Kafka topics, and write out Nexus files for consumption by data-reduction applications such as Mantid or GudRun.
+This process is responsible for listening to data streamed through Kafka, and generating a NeXus data file.
+
+The NeXus files created by this program will be read by analysis software such as [Mantid](https://github.com/mantidproject/mantid) or [Gudrun](https://github.com/disorderedmaterials/Gudrun).
+
+The NeXus files should, where possible, share a format with the data files previously written by the [ISISICP](https://github.com/ISISNeutronMuon/ISISICP/) program. Intentional, documented deviations are allowable, but where equivalent data exists in both systems, the NeXus file format should remain the same.
+
+Writing `.raw` files, or any format other than HDF5/NeXus, is a non-goal for this process.
 
 ### [`forwarder`](https://github.com/isiscomputingGroup/forwarder)
 
