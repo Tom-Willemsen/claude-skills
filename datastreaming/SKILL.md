@@ -1,6 +1,6 @@
 ---
 name: datastreaming
-description: General high-level information about the data-streaming project: new components of IBEX which will replace legacy ISISICP infrastructure related to neutron data acquisition with a modern Kafka-based system. Includes processes such as `kafka_dae_control`, `event_udp_to_kafka`, `kafka_event_aggregator`, `kafka_dae_diagnostics`, `filewriter`, `forwarder`, `kafka_forwarder_configurer`.
+description: General high-level information about the data-streaming project - new components of IBEX which will replace legacy ISISICP infrastructure related to neutron data acquisition with a modern Kafka-based system. Includes processes such as `kafka_dae_control`, `event_udp_to_kafka`, `kafka_event_aggregator`, `kafka_dae_diagnostics`, `filewriter`, `forwarder`, `kafka_forwarder_configurer`.
 ---
 
 # Datastreaming
